@@ -34,3 +34,6 @@ pip3 install pillow
 python3 main.py
 ```
 *(Note: if your monitor isnt't `1920x1080`, update the thing at top of the `main.py` file)
+
+
+## Pictures :3
