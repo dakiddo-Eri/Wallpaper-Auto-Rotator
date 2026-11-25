@@ -84,6 +84,7 @@ def get_theme():
          "sky_bot": (56, 182, 232),
          "sun": (210, 248, 255),
          "mountain_far": (18, 48, 94),
+         "mountain_near": (8, 18, 42),
         },
         {"sky_top": (18, 32, 58),  #artic winter
          "sky_mid": (78, 116, 164),
