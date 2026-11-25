@@ -4,7 +4,7 @@ import os
 import random 
 import math
 
-WIDTH, HEIGHT = 1920, 1080
+WIDTH, HEIGHT = 1920, 1080     #change here acording to your monitor setup
 OUTPUT_FILE = "daily_wallpaper.png"
 
 def lerp_color(c1, c2, t):
@@ -37,6 +37,61 @@ def get_theme():
          "mountain_far": (58, 32, 98),
          "mountain_near": (18, 10, 34),
         },
+                {"sky_top": (16, 28, 78), #Makoto Shinkai Twilight
+        "sky_mid": (118, 68, 168),
+         "sky_bot": (255, 166, 128),
+        "sun": (255, 245, 220),
+         "mountain_far": (74, 52, 118),
+         "mountain_near": (20, 16, 44),
+        },
+        {"sky_top": (38, 22, 64), #Neo-Tokyo nighty night
+         "sky_mid": (196, 84, 134),
+        "sky_bot": (255, 198, 214),
+        "sun": (255, 68, 168),
+         "mountain_far": (32, 24, 74),
+         "mountain_near": (10, 10, 24),
+        },
+        {"sky_top": (24, 108, 204), #Chilibi Afternoon
+        "sky_mid": (86, 174, 242),
+         "sky_bot": (198, 236, 255),
+        "sun": (255, 255, 240),
+        "mountain_far": (68, 126, 158),
+        "mountain_near": (24, 58, 74),
+        },
+        {"sky_top": (48, 24, 42), #Golden hour, maybe
+        "sky_mid": (184, 68, 52),
+        "sky_bot": (252, 194, 92),
+        "sun": (255, 250, 215),
+        "mountain_far": (112, 46, 48),
+        "mountain_near": (34, 16, 22),
+        },
+        {"sky_top": (6, 16, 28),  #northern lights
+         "sky_mid": (18, 92, 86),
+         "sky_bot": (110, 235, 168),
+         "sun": (225, 225, 240),
+         "mountain_far": (22, 64, 72),
+         "mountain_near": (8, 22, 30),
+         },
+        {"sky_top": (42, 34, 86),     #lavendar dream
+         "sky_mid": (132, 108, 198),
+         "sky_bot": (236, 186, 226),
+         "sun": (255, 246, 225),
+         "mountain_far": (88, 72, 146),
+         "mountain_near": (28, 22, 54),
+         },
+        {"sky_top": (6, 14, 38),   #deep ocean
+         "sky_mid": (16, 56, 122),
+         "sky_bot": (56, 182, 232),
+         "sun": (210, 248, 255),
+         "mountain_far": (18, 48, 94),
+        },
+        {"sky_top": (18, 32, 58),  #artic winter
+         "sky_mid": (78, 116, 164),
+         "sky_bot": (212, 228, 246),
+         "sun": (250, 252, 255),
+         "mountain_far": (104, 132, 168),
+         "mountain_near": (32, 46, 72),
+         }
     ]
     return random.choice(themes)
 
