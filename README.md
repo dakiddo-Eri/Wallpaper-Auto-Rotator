@@ -21,7 +21,7 @@ wallpaper on every script run.
 ### 1. Clone the Repo
 ```bash
 git clone https://github.com/dakiddo-Eri/Wallpaper-Auto-Rotator
-cd 
+cd Wallpaper-Auto-Rotator
 ```
 ### 2. Install Dependencies
 Make sure you have Python3 isntalled first
@@ -37,3 +37,8 @@ python3 main.py
 
 
 ## Pictures :3
+<img width="1919" height="1079" alt="Screenshot 2026-11-25 144654" src="https://github.com/user-attachments/assets/70d5bd49-ea98-43a4-b504-90caa786c2dd" />
+
+<img width="1919" height="1079" alt="Screenshot 2026-11-25 144718" src="https://github.com/user-attachments/assets/cbe4b1e4-163f-4536-91e2-0c7db466ac57" />
+
+<img width="1919" height="1079" alt="Screenshot 2026-11-25 144705" src="https://github.com/user-attachments/assets/a408386f-0b5c-443c-a8bc-4e9b37958397" />
