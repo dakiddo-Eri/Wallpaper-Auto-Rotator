@@ -21,6 +21,7 @@ def get_theme():
          "sky_bot": (245, 148, 82),
          "sun": (255, 235, 190),
          "mountain_far": (88, 44, 84),
+         "mountain_near": (24, 16, 38)
          },
         {"sky_top": (8, 14, 32),    #deep auroa/midnight
          "sky_mid": (22, 68, 94),
@@ -97,3 +98,31 @@ def create_wallpaper(filepath):
     glow = glow.filter(ImageFilter.GaussianBlur(radius = 65))
     img = Image.alpha_composite(img.convert("RGBA"), glow).convert("RGB")
     draw = ImageDraw.Draw(img)
+    draw.ellipse([sun_x - sun_r, sun_y - sun_r, sun_x + sun_r, sun_y + sun_r], fill = theme["sun"])
+    layers = 4
+
+    for i in range(layers):
+        t = i / (layers - 1)
+        ridge_y = int(HEIGHT * (0.52 + i * 0.09))
+        roughness = random.randint(65, 115) * (1 - t * 0.25)
+        mountain_color = lerp_color(theme["mountain_far"], theme["mountain_near"], t)
+        pts = generate_mountain_points(ridge_y, roughness, seed_offset = i * 3.1)
+        draw.polygon(pts, fill = mountain_color)
+        if i < layers -1:
+            mist = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
+            mist_draw = ImageDraw.Draw(mist)
+            mist_y = ridge_y + 40
+            mist_draw.rectangle([0, mist_y, WIDTH, mist_y + 140], fill = (*theme["sky_bot"], 45))
+            mist = mist.filter(ImageFilter.GaussianBlur(radius = 45))
+            img = Image.alpha_composite(img.convert("RGBA"), mist).convert("RGB")
+            draw = ImageDraw.Draw(img)
+    img.save(filepath, "PNG")
+
+def set_windows_wallpaper(filepath):
+    abs_path = os.path.abspath(filepath)
+    ctypes.windll.user32.SystemParametersInfoW(20, 0, abs_path, 3)
+
+if __name__ == "__main__":
+    create_wallpaper(OUTPUT_FILE)
+    set_windows_wallpaper(OUTPUT_FILE)
+    print("New wallpaper YAYA!!")
